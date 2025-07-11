@@ -1,0 +1,3 @@
+# partners didn't show up???
+# standard problem set 1. first question was already done in the example, i don't think they meant to
+# oh i got moved to a new group! theyre doing session 2's problems though...
