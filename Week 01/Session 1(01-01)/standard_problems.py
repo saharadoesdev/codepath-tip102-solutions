@@ -344,7 +344,139 @@ def can_pair(item_quantities):
     Args:
         variable (type): Description.
     """
-    pass
+    for quantity in item_quantities:
+        if quantity % 2 != 0:
+            return False
+    return True
+
+# Complexity Analysis:
+# Time Complexity: O(?) - Description.
+# Space Complexity: O(?) - Description.
+
+
+# -----------------------------------------------------------------------------
+# Problem 10: Split Haycorns
+# -----------------------------------------------------------------------------
+'''
+Problem:
+Piglet's has collected a big pile of his favorite food, haycorns, and wants to
+split them evenly amongst his friends. Write a function `split_haycorns()` to
+help Piglet determine the number of ways he can split his haycorns into even
+groups. `split_haycorns()` accepts a positive integer `quantity` as a parameter
+and returns a list of all divisors of quantity.
+
+Example Usage:
+quantity = 6
+split_haycorns(quantity)
+
+quantity = 1
+split_haycorns(quantity)
+
+Example Output:
+[1, 2, 3, 6]
+[1]
+'''
+def split_haycorns(quantity):
+    """
+    Description.
+    
+    Args:
+        variable (type): Description.
+    """
+    divisors = set()
+    for i in range(1, int(quantity ** 0.5) + 1):
+        if quantity % i == 0:
+            divisors.add(i)
+            divisors.add(quantity // i)
+
+    return sorted(divisors)
+
+# Complexity Analysis:
+# Time Complexity: O(?) - Description.
+# Space Complexity: O(?) - Description.
+
+
+# -----------------------------------------------------------------------------
+# Problem 11: T-I-Double Guh-ER
+# -----------------------------------------------------------------------------
+'''
+Problem:
+Signs in the Hundred Acre Wood have been losing letters as Tigger bounces around
+stealing any letters he needs to spell out his name. Write a function `tiggerfy()`
+that accepts a string `s`, and returns a new string with the letters `t`, `i`,
+`g`, `e`, and `r` removed from it.
+
+Example Usage:
+s = "suspicerous"
+tiggerfy(s)
+
+s = "Trigger"
+tiggerfy(s)
+
+s = "Hunny"
+tiggerfy(s)
+
+Example Output:
+"suspcous"
+""
+"Hunny"
+'''
+def tiggerfy(s):
+    """
+    Description.
+    
+    Args:
+        variable (type): Description.
+    """
+    letters_to_remove = "tiger"
+    result = ""
+    for letter in s:
+        if letter.lower() not in letters_to_remove:
+            result += letter
+    return result
+
+    # Alternative simple one-liner solution:
+    # return ''.join([letter for letter in s if letter.lower() not in "tiger"])
+            
+
+# Complexity Analysis:
+# Time Complexity: O(?) - Description.
+# Space Complexity: O(?) - Description.
+
+
+# -----------------------------------------------------------------------------
+# Problem 12: Thistle Hunt
+# -----------------------------------------------------------------------------
+'''
+Problem:
+Pooh, Piglet, and Roo are looking for thistles to gift their friend Eeyore. Write
+a function `locate_thistles()` that takes in a list of strings `items` and returns
+a list of the indices of any elements with value `"thistle"`. The indices in the
+resulting list should be ordered from least to greatest.
+
+Example Usage:
+items = ["thistle", "stick", "carrot", "thistle", "eeyore's tail"]
+locate_thistles(items)
+
+items = ["book", "bouncy ball", "leaf", "red balloon"]
+locate_thistles(items)
+
+Example Output:
+[0, 3]
+[]
+'''
+def locate_thistles(items):
+    """
+    Description.
+    
+    Args:
+        variable (type): Description.
+    """
+    indices = []
+    for i in range (0, len(items)):
+        if items[i] == "thistle":
+            indices.append(i)
+    return indices
 
 # Complexity Analysis:
 # Time Complexity: O(?) - Description.
@@ -441,12 +573,45 @@ if __name__ == "__main__":
     print_todo_list(task)
 
     # Tests for Problem 9
-    print("\n--- Problem #: can_pair(item_quantities) ---")
+    print("\n--- Problem 9: can_pair(item_quantities) ---")
+    item_quantities = [2, 4, 6, 8]
+    print(can_pair(item_quantities))
+
+    item_quantities = [1, 2, 3, 4]
+    print(can_pair(item_quantities))
+
+    item_quantities = []
+    print(can_pair(item_quantities))
 
     # Tests for Problem 10
-    print("\n--- Problem #: split_haycorns(quantity) ---")
+    print("\n--- Problem 10: split_haycorns(quantity) ---")
+    quantity = 6
+    print(split_haycorns(quantity))
 
-    # Tests for Problem #
-    print("\n--- Problem #: template(var, x) ---")
+    quantity = 1
+    print(split_haycorns(quantity))
+
+    # Tests for Problem 11
+    print("\n--- Problem 11: tiggerfy(s) ---")
+
+    s = "suspicerous"
+    print(tiggerfy(s))
+
+    s = "Trigger"
+    print(tiggerfy(s))
+
+    s = "Hunny"
+    print(tiggerfy(s))
+
+    # Tests for Problem 12
+    print("\n--- Problem 12: locate_thistles(items) ---")
+    items = ["thistle", "stick", "carrot", "thistle", "eeyore's tail"]
+    print(locate_thistles(items))
+
+    items = ["book", "bouncy ball", "leaf", "red balloon"]
+    print(locate_thistles(items))
+
+    # TEMPLATE Tests for Problem #
+    # print("\n--- Problem #: template(var, x) ---")
     # print(f"greeting(\"Michael\") => {greeting("Michael")}")
     # print(f"greeting(\"Winnie the Pooh\") => {greeting("Winnie the Pooh")}")
