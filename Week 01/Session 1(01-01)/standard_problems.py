@@ -437,7 +437,6 @@ def tiggerfy(s):
 
     # Alternative simple one-liner solution:
     # return ''.join([letter for letter in s if letter.lower() not in "tiger"])
-            
 
 # Complexity Analysis:
 # Time Complexity: O(?) - Description.
@@ -477,33 +476,6 @@ def locate_thistles(items):
         if items[i] == "thistle":
             indices.append(i)
     return indices
-
-# Complexity Analysis:
-# Time Complexity: O(?) - Description.
-# Space Complexity: O(?) - Description.
-
-
-# -----------------------------------------------------------------------------
-# Problem #: Template
-# -----------------------------------------------------------------------------
-'''
-Problem:
-Write a function...
-
-Example Usage:
-()
-
-Example Output:
-...
-'''
-def function(var):
-    """
-    Description.
-    
-    Args:
-        variable (type): Description.
-    """
-    pass
 
 # Complexity Analysis:
 # Time Complexity: O(?) - Description.
@@ -610,8 +582,3 @@ if __name__ == "__main__":
 
     items = ["book", "bouncy ball", "leaf", "red balloon"]
     print(locate_thistles(items))
-
-    # TEMPLATE Tests for Problem #
-    # print("\n--- Problem #: template(var, x) ---")
-    # print(f"greeting(\"Michael\") => {greeting("Michael")}")
-    # print(f"greeting(\"Winnie the Pooh\") => {greeting("Winnie the Pooh")}")
